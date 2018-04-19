@@ -25,9 +25,9 @@ The aim of the project is to predict in-hospital mortality in the early stage of
 │   │   │   ├── figure4.png
 │   │   │   └── figure5.png
 │   │   ├── notebook
-│   │   │   ├── Phase1_binary_classifier.ipynb
-│   │   │   ├── Phase2_multiclass_classifier.ipynb
-│   │   │   ├── Phase2_regressor.ipynb
+│   │   │   ├── EDA.ipynb
+│   │   │   ├── Phase1_model.ipynb
+│   │   │   ├── Phase2_model.ipynb
 │   │   │   ├── env.template
 │   │   │   └── utils.py
 │   │   ├── requirement.txt
