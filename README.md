@@ -133,9 +133,9 @@ Similar to Phase 1, we have built a custom machine learning pipeline to select f
 
 | Notebook                |  Description   |
 | :-----------------------|:---------------|
-| `EDA.ipynb`             | Exploratory data analysis on the study population |
-| `Phase1_model.ipynb`    | Model training and evaluation using Random Forest Classifier to predict in-hospital mortality|
-| `Phase2_model.ipynb`    |Model training and evaluation using Random Forest Multiclass Classifier to predict death hours since ICU admission|
+| EDA.ipynb.              | Exploratory data analysis on the study population |
+| Phase1_model.ipynb      | Model training and evaluation using Random Forest Classifier to predict in-hospital mortality|
+| Phase2_model.ipynb      |Model training and evaluation using Random Forest Multiclass Classifier to predict death hours since ICU admission|
 
 
 Some major results of the model performance are shown in the figures below. Please refer to the paper for discussion and conclusion. 
