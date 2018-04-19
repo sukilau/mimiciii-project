@@ -3,7 +3,7 @@
 
 ## Overview
 This code repository presents a set of reproducible code for the final project of CSE6250. 
-The aim of the project is to predict in-hospital mortality in the early stage of ICU stay (6-hour or 12-hour since ICU admission). If a patient is predicted dead, the model would further provide an estimate of death hours since ICU admission. Please refer to the paper for further explanation on the data source, methodology, model architecture and results. The directory structure of this repository is shown below.
+The aim of the project is to predict in-hospital mortality in the early stage of ICU stay (6-hour since ICU admission). If a patient is predicted dead, the model would further provide an estimate of death hours since ICU admission. Please refer to the paper for further explanation on the data source, methodology, model architecture and results. The directory structure of this repository is shown below.
 ```
 ├── README.md
 ├── Code
@@ -117,7 +117,19 @@ We then reproduced the code in Hive on Microsoft Azure. The decompressed dataset
 
 
 ## Stage 2. Machine Learning using Python
-Stage 2 consists two phases of model training. In Phase 1, a binary classifier has been trained using the extracted features in Stage 1 to predict in-hospital mortality. In Phase 2, a multiclass classifier has been trained  to predict the death hours since ICU admission for those predicted dead patients in Phase 1. 
+
+Stage 2 consists two phases of model training. Before we trained our models, we have done some exploratory data analysis to understand the study population. Please refer to the notebook `EDA.ipynb` for relevant summary statistics and data visualization of the study population.
+
+In Phase 1, a binary classifier has been trained using features extracted in Stage 1 to predict in-hospital mortality. We have built a custom machine learning pipeline to select features, transform data, impute missing values and train a random forest classifier using grid search on 5-fold CV. We have also tested the trained model on a separate test set (20% of the entire dataset), evaluated the model result using metrics such as accuracy, precision, recall, F1 score, AUC, and plotted the ROC curve. Please refer to the notebook `Phase1_model.ipynb` for details of model construction, and the paper for further discussion on model comparison using 6-hour, 12-hour and 24-hour ICU data.
+
+In Phase 2, a multiclass classifier has been trained to predict the death hours since ICU admission for those predicted dead patients in Phase 1. We have defined 3 classes for death time in hours since ICU admission. 
+
+* Class 0 : death time < 1 day
+* Class 1 : 1 day <= death time < 1 week
+* Class 2 : death time >= 1 week 
+
+Similar to Phase 1, we have built a custom machine learning pipeline to select features, transform data, impute missing values and train a random forest classifier using grid search on 5-fold CV. We have tested the trained model on a separate test set (20% of the entire dataset), and plotted the micro-average ROC curve, macro-average ROC curve and ROC curves for each class.  Please refer to the notebook `Phase2_model.ipynb` for details of model construction, and the paper for further discussion on model comparison using 6-hour, 12-hour and 24-hour ICU data.
+
 
 | Notebook                |  Description   |
 | :-----------------------|:---------------|
@@ -125,5 +137,15 @@ Stage 2 consists two phases of model training. In Phase 1, a binary classifier h
 | `Phase1_model.ipynb`    | Model training and evaluation using Random Forest Classifier to predict in-hospital mortality|
 | `Phase2_model.ipynb`    |Model training and evaluation using Random Forest Multiclass Classifier to predict death hours since ICU admission|
 
-This 2-phase model has been trained on 5-fold cross validation and tested on a separate test set using the aggregated features in 6-hour, 12-hour and 24-hour timeframe respectively. We have then compared the model performance between these timeframe to determine whether an early stage (6-hour or 12-hour) prediction model is competitive to those trained on a more common timeframe of 24-hour. Please refer to the paper for further discussion on the model architecture and the model results.
 
+Some major results of the model performance are shown in the figures below. Please refer to the paper for discussion and conclusion. 
+
+![Figure 1](Code/Python/img/figure1.png)
+
+![Figure 2](Code/Python/img/figure2.png)
+
+![Figure 3](Code/Python/img/figure3.png)
+
+![Figure 4](Code/Python/img/figure4.png)
+
+![Figure 5](Code/Python/img/figure5.png)
