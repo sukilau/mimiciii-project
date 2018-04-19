@@ -6,18 +6,8 @@ This code repository presents a set of reproducible code for the final project o
 The aim of the project is to predict in-hospital mortality in the early stage of ICU stay (6-hour or 12-hour since ICU admission). If a patient is predicted dead, the model would further provide an estimate of death hours since ICU admission. Please refer to the paper for further explanation on the data source, methodology, model architecture and results. The directory structure of this repository is shown below.
 ```
 ├── README.md
-├── code
+├── Code
 │   ├── Hive
-│   │   ├── input
-│   │   │   ├── ADMISSIONS.csv
-│   │   │   ├── CHARTEVENTS.csv
-│   │   │   ├── ICUSTAYS.csv
-│   │   │   ├── LABEVENTS.csv
-│   │   │   ├── OUTPUTEVENTS.csv
-│   │   │   ├── PATIENTS.csv
-│   │   │   ├── mp_gcs.csv
-│   │   │   ├── mp_hourly_cohort.csv
-│   │   │   └── mp_lab.csv
 │   │   ├── load_data.hql
 │   │   ├── mp_cohort.hql
 │   │   ├── mp_data.hql
@@ -28,38 +18,19 @@ The aim of the project is to predict in-hospital mortality in the early stage of
 │   │   ├── output
 │   │   └── output_data.hql
 │   ├── Python
-│   │   ├── data
-│   │   │   ├── data_hive
-│   │   │   └── data_psql
-│   │   │       ├── mp_data.csv
-│   │   │       ├── mp_data_agg_12hr.csv
-│   │   │       ├── mp_data_agg_24hr.csv
-│   │   │       ├── mp_data_agg_6hr.csv
-│   │   │       └── regressor
-│   │   │           ├── mp_data_agg_24hr_v2.csv
-│   │   │           └── mp_data_agg_6hr_v2.csv
 │   │   ├── img
 │   │   │   ├── figure1.png
 │   │   │   ├── figure2.png
 │   │   │   ├── figure3.png
 │   │   │   ├── figure4.png
 │   │   │   └── figure5.png
-│   │   ├── model
-│   │   │   └── p1_RF_24hr.sav
-│   │   ├── notebook1
-│   │   │   ├── data_prep.ipynb
-│   │   │   ├── env.template
-│   │   │   └── utils.py
-│   │   ├── notebook2
+│   │   ├── notebook
 │   │   │   ├── Phase1_binary_classifier.ipynb
 │   │   │   ├── Phase2_multiclass_classifier.ipynb
 │   │   │   ├── Phase2_regressor.ipynb
 │   │   │   ├── env.template
 │   │   │   └── utils.py
 │   │   ├── requirement.txt
-│   │   └── result
-│   │       ├── phase1_model_results.md
-│   │       └── phase2_model_results.md
 │   └── SQL
 │       ├── mp_bg.sql
 │       ├── mp_cohort.sql
@@ -70,23 +41,8 @@ The aim of the project is to predict in-hospital mortality in the early stage of
 │       ├── mp_lab.sql
 │       ├── mp_uo.sql
 │       └── mp_vital.sql
-├── draft_modifictaion
-├── paper
-│   ├── AMIA2017-Submission-Word-Template.docx
-│   ├── amia.cls
-│   ├── amia.log
-│   ├── main.aux
-│   ├── main.log
-│   ├── main.pdf
-│   ├── main.tex
-│   └── pics
-│       ├── figure1.png
-│       ├── figure1_.png
-│       ├── figure2.png
-│       ├── figure3.png
-│       ├── figure4.png
-│       └── figure5.png
-└── slides
+├── paper.pdf
+└── slides.pdf
 ```
 
 The project consists of 2 stages:
