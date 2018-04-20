@@ -1,10 +1,10 @@
 # Project Title : Mortality and Death Time Prediction Models using MIMIC-III
 
+
 ## Overview
 This code repository presents a set of reproducible code for the final project of CSE6250. 
 The aim of the project is to predict in-hospital mortality in the early stage of ICU stay (6-hour since ICU admission). If a patient is predicted dead, the model would further provide an estimate of death hours since ICU admission. Please refer to the paper for further explanation on the data source, methodology, model architecture and results. The directory structure of this repository is shown below.
 ```
-├── README.md
 ├── Code
 │   ├── Hive
 │   │   ├── load_data.hql
@@ -14,7 +14,6 @@ The aim of the project is to predict in-hospital mortality in the early stage of
 │   │   ├── mp_lab.hql
 │   │   ├── mp_uo.hql
 │   │   ├── mp_vital.hql
-│   │   ├── output
 │   │   └── output_data.hql
 │   ├── Python
 │   │   ├── img
@@ -22,14 +21,20 @@ The aim of the project is to predict in-hospital mortality in the early stage of
 │   │   │   ├── figure2.png
 │   │   │   ├── figure3.png
 │   │   │   ├── figure4.png
-│   │   │   └── figure5.png
+│   │   │   ├── figure5.png
+│   │   │   ├── figure6.png
+│   │   │   ├── figure7.png
+│   │   │   └── figure_combine.png
 │   │   ├── notebook
 │   │   │   ├── EDA.ipynb
+│   │   │   ├── POC_LSTM.ipynb
+│   │   │   ├── POC_Regressor.ipynb
 │   │   │   ├── Phase1_model.ipynb
 │   │   │   ├── Phase2_model.ipynb
 │   │   │   ├── env.template
+│   │   │   ├── regressor_pipeline.py
 │   │   │   └── utils.py
-│   │   ├── requirement.txt
+│   │   └── requirement.txt
 │   └── SQL
 │       ├── mp_bg.sql
 │       ├── mp_cohort.sql
@@ -40,8 +45,8 @@ The aim of the project is to predict in-hospital mortality in the early stage of
 │       ├── mp_lab.sql
 │       ├── mp_uo.sql
 │       └── mp_vital.sql
-├── paper.pdf
-└── slides.pdf
+├── README.md
+└── paper.pdf
 ```
 
 The project consists of 2 stages:
@@ -129,22 +134,31 @@ In Phase 2, a multiclass classifier has been trained to predict the death hours 
 
 Similar to Phase 1, we have built a custom machine learning pipeline to select features, transform data, impute missing values and train a random forest classifier using grid search on 5-fold CV. We have tested the trained model on a separate test set (20% of the entire dataset), and plotted the micro-average ROC curve, macro-average ROC curve and ROC curves for each class.  Please refer to the notebook `Phase2_model.ipynb` for details of model construction, and the paper for further discussion on model comparison using 6-hour, 12-hour and 24-hour ICU data.
 
+We have also included additional notebooks which demonstrates some of our ideas in the proof-of-concept stage. For example, we have studied the feasibility of using LSTM to handle time series data, or using regressor instead of multiclass classifier to predict death time. Please refer to the relevant notebooks.
 
 | Notebook                |  Description   |
 | :-----------------------|:---------------|
 | EDA.ipynb.              | Exploratory data analysis on the study population |
-| Phase1_model.ipynb      | Model training and evaluation using Random Forest Classifier to predict in-hospital mortality|
-| Phase2_model.ipynb      |Model training and evaluation using Random Forest Multiclass Classifier to predict death hours since ICU admission|
+| Phase1_model.ipynb      | Random forest classifier to predict in-hospital mortality in Phase 1|
+| Phase2_model.ipynb      | Random Forest Multiclass Classifier to predict death hours since ICU admission in Phase 2|
+| POC_Regressor.ipynb     | Random Forest Regressor to predict death hours since ICU admission in Phase 2 (POC)|
+| POC_LSTM.ipynb          | LSTM to predict in-hospital mortality in Phase 1 (POC)|
 
 
+## Experimental Results
 Some major results of the model performance are shown in the figures below. Please refer to the paper for discussion and conclusion. 
 
-![Figure 1](Code/Python/img/figure1.png)
+### Phase 1 Results
+Figure 1: ROC curves
+![Figure 1](Code/Python/img/figure2.png=300x)
 
-![Figure 2](Code/Python/img/figure2.png)
+Figure 2: Feature Importance 
+![Figure 2](Code/Python/img/figure3.png=300x)
 
-![Figure 3](Code/Python/img/figure3.png)
+### Phase 2 Results
+Figure 1: ROC curves
+![Figure 3](Code/Python/img/figure_combine.png=300x)
 
-![Figure 4](Code/Python/img/figure4.png)
+Figure 4: Feature Importance 
+![Figure 4](Code/Python/img/figure5.png=300x)
 
-![Figure 5](Code/Python/img/figure5.png)
