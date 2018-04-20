@@ -150,15 +150,15 @@ Some major results of the model performance are shown in the figures below. Plea
 
 ### Phase 1 Results
 Figure 1: ROC curves
-![Figure 1](Code/Python/img/figure2.png=300x)
+![Figure 1](Code/Python/img/figure2.png=)
 
 Figure 2: Feature Importance 
-![Figure 2](Code/Python/img/figure3.png=300x)
+![Figure 2](Code/Python/img/figure6.png)
 
 ### Phase 2 Results
 Figure 1: ROC curves
-![Figure 3](Code/Python/img/figure_combine.png=300x)
+![Figure 3](Code/Python/img/figure_combine.png)
 
 Figure 4: Feature Importance 
-![Figure 4](Code/Python/img/figure5.png=300x)
+![Figure 4](Code/Python/img/figure7.png)
 
