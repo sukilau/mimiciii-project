@@ -1,0 +1,12 @@
+numpy
+pandas
+scipy
+scikit-learn
+matplotlib
+seaborn
+lightgbm==2.1.0
+xgboost==0.7.post3
+ utils
+ os
+ dotenv
+ psycopg2
