@@ -1,12 +1,8 @@
-numpy
-pandas
-scipy
-scikit-learn
-matplotlib
-seaborn
-lightgbm==2.1.0
-xgboost==0.7.post3
- utils
- os
- dotenv
- psycopg2
+matplotlib==2.1.2
+mysql-connector-python==8.0.6
+numpy==1.14.0
+pandas==0.22.0
+psycopg2==2.7.4
+psycopg2-binary==2.7.4
+python-dotenv==0.7.1
+scikit-learn==0.19.1

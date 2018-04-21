@@ -140,8 +140,8 @@ We have also included additional notebooks which demonstrates some of our ideas 
 | :-----------------------|:---------------|
 | EDA.ipynb.              | Exploratory data analysis on the study population |
 | Phase1_model.ipynb      | Random forest classifier to predict in-hospital mortality in Phase 1|
-| Phase2_model.ipynb      | Random Forest Multiclass Classifier to predict death hours since ICU admission in Phase 2|
-| POC_Regressor.ipynb     | Random Forest Regressor to predict death hours since ICU admission in Phase 2 (POC)|
+| Phase2_model.ipynb      | Random forest multiclass classifier to predict death hours since ICU admission in Phase 2|
+| POC_Regressor.ipynb     | Random forest regressor to predict death hours since ICU admission in Phase 2 (POC)|
 | POC_LSTM.ipynb          | LSTM to predict in-hospital mortality in Phase 1 (POC)|
 
 

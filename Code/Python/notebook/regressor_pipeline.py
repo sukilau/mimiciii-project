@@ -149,10 +149,6 @@ def fit_gridsearch_pipeline(df, numerical_features, metric):
                   'algorithm__max_features': ["auto", "sqrt", "log2"],
                   "algorithm__max_depth": [5, 10, 30],
                   "algorithm__bootstrap": [True, False]}
-#     parameters = {'algorithm__n_estimators': [500],
-#                   'algorithm__max_features': ["log2"],
-#                   "algorithm__max_depth": [30],
-#                   "algorithm__bootstrap": [False]}
 
     grid_search = GridSearchCV(discrete_pipeline, parameters, n_jobs=-1, verbose=1, refit=True, cv=5, scoring=metric)
     grid_search.fit(train_cv_df, train_cv_df.hosp_deathtime_hours)
