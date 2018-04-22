@@ -3,7 +3,9 @@
 
 ## Overview
 This code repository presents a set of reproducible code for the final project of CSE6250. 
-The aim of the project is to predict in-hospital mortality in the early stage of ICU stay (6-hour since ICU admission). If a patient is predicted dead, the model would further provide an estimate of death hours since ICU admission. Please refer to the paper for further explanation on the data source, methodology, model architecture and results. The directory structure of this repository is shown below.
+The aim of the project is to predict in-hospital mortality in the early stage of ICU stay (6-hour since ICU admission). If a patient is predicted dead, the model would further provide an estimate of death hours since ICU admission. Please refer to the paper for further explanation on the data source, methodology, model architecture and results. A presentation video is also available at [YouTube](https://www.youtube.com/watch?v=C9ixjv8CZRY).
+
+The directory structure of this repository is shown below.
 ```
 ├── Code
 │   ├── Hive
