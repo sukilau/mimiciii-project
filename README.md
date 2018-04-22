@@ -27,6 +27,7 @@ The aim of the project is to predict in-hospital mortality in the early stage of
 │   │   │   └── figure_combine.png
 │   │   ├── notebook
 │   │   │   ├── EDA.ipynb
+│   │   │   ├── POC_LSTM.ipynb
 │   │   │   ├── POC_Regressor.ipynb
 │   │   │   ├── Phase1_model.ipynb
 │   │   │   ├── Phase2_model.ipynb
@@ -47,6 +48,7 @@ The aim of the project is to predict in-hospital mortality in the early stage of
 ├── README.md
 ├── paper.pdf
 └── slides.pdf
+
 ```
 
 The project consists of 2 stages:
